@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
-    const {title, img, price, description} = service;
+    const {_id, title, img, price, description} = service;
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
             <div>
@@ -11,8 +12,9 @@ const ServiceCard = ({service}) => {
 
 	<div>
 		<img src={img} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+        <h3>Price: ${price}</h3>
 		<p className="text-md my-3 dark:text-gray-400">{description.length > 100 ? (description.slice(0, 100) + `.....`) : description}</p>
-        <button className="btn btn-outline w-full btn-secondary">show more</button>
+        <Link to={`/services/${_id}`}><button className="btn btn-outline w-full btn-secondary">show more</button></Link>
 	</div>
 	<div className="flex flex-wrap justify-between">
 		<div className="space-x-2">
