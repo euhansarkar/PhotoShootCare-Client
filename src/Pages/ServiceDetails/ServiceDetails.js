@@ -1,6 +1,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 import Features from "./Features/Features";
 
 
@@ -9,6 +10,7 @@ const notify = () => toast(`added to cart list`);
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
   const {_id, title, img, service_id, price, description, facility} = serviceDetails;
+  useTitle(`details`);
   return (
     <div className="mt-8 mb-20">
         <div className="card lg:card-side bg-base-100 shadow-xl ">

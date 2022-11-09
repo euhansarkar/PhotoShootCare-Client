@@ -3,10 +3,12 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.png";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 
 const Register = () => {
   const { createUser, googleSignIn } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  useTitle(`register`)
 
   const handleRegisterForm = (event) => {
     event.preventDefault();
