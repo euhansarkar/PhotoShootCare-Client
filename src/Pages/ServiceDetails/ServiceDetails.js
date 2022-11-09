@@ -2,6 +2,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../Hooks/useTitle";
+import AddReview from "./AddReview/AddReview";
 import Features from "./Features/Features";
 
 
@@ -34,6 +35,7 @@ const ServiceDetails = () => {
             facility.map(facil => <Features facil={facil} key={facil.key}></Features>)
         }
     </div>
+    <AddReview key={_id} serviceDetails={serviceDetails}></AddReview>
     </div>
   );
 };
