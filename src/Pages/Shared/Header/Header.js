@@ -11,6 +11,7 @@ const Header = () => {
     const menuLists = <>
         <li><Link to={`/`}>Home</Link></li>
         <li><Link to={`/services`}>Services</Link></li>
+        <li><Link to={`/blogs`}>Blogs</Link></li>
         {
           user?.uid ? <>
           <li><Link>Logout</Link></li></> :
