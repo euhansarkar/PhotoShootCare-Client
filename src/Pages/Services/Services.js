@@ -1,5 +1,4 @@
 import React from "react";
-import { PhotoProvider } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
 import ServiceCard from "../Shared/ServiceCard/ServiceCard";
 

@@ -1,6 +1,8 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
+
 
 const ServiceCard = ({ service }) => {
   const { _id, title, img, price, description } = service;

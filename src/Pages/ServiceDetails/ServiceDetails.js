@@ -1,6 +1,10 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import Features from "./Features/Features";
+
+
+const notify = () => toast(`added to cart list`);
 
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
@@ -16,7 +20,7 @@ const ServiceDetails = () => {
         <p>{description}</p>
         <div className="card-actions flex items-center justify-between">
           <p>price: ${price}</p>
-          <button className="btn btn-primary">
+          <button onClick={notify} className="btn btn-primary">
             Checkout Now
           </button>
         </div>
