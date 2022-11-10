@@ -4,18 +4,24 @@ import AuthProvider, { AuthContext } from '../../../Contexts/AuthProvider/AuthPr
 
 const Header = () => {
 
-  const {user} = useContext(AuthContext);
+  const {user, logOut} = useContext(AuthContext);
 
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {})
+    .then(err => console.error(err))
+  }
   console.log(user);
-
     const menuLists = <>
         <li><Link to={`/`}>Home</Link></li>
         <li><Link to={`/services`}>Services</Link></li>
         <li><Link to={`/blogs`}>Blogs</Link></li>
+        <li><Link to={`/myservice`}>My Services</Link></li>
+        <li><Link to={`/myreviews`}>My Reviews</Link></li>
         {
           user?.uid ? <>
-          <li><Link>Logout</Link></li></> :
-          <><li><Link>Login</Link></li></>
+          <li><Link onClick={handleLogOut}>Logout</Link></li></> :
+          <><li><Link to={`/login`}>Login</Link></li></>
         }
     </>
 

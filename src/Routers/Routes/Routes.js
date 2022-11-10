@@ -4,10 +4,13 @@ import Main from '../../Layout/Main';
 import Blogs from '../../Pages/Blogs/Blogs';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
+import MyReview from '../../Pages/MyReview/MyReview';
+import MyService from '../../Pages/MyService/MyService';
 import NotFound from '../../Pages/NotFound/NotFound';
 import Register from '../../Pages/Register/Register';
 import ServiceDetails from '../../Pages/ServiceDetails/ServiceDetails';
 import Services from '../../Pages/Services/Services';
+import PrivateRoutes from '../PrivateRoutes/PrivateRoutes';
 
 const Routes = createBrowserRouter([
     {
@@ -44,6 +47,14 @@ const Routes = createBrowserRouter([
             {
                 path:`/blogs`,
                 element: <Blogs></Blogs>
+            },
+            {
+                path: `/myreviews`,
+                element: <MyReview></MyReview>
+            },
+            {
+                path: `/myservice`,
+                element: <PrivateRoutes><MyService></MyService></PrivateRoutes>
             }
         ]
     }

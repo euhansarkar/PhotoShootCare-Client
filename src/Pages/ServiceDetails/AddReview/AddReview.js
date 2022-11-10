@@ -98,6 +98,7 @@ const AddReview = ({ serviceDetails }) => {
         </div>
         <div>
           <textarea
+           maxlength="120"
             className="textarea textarea-error w-full my-4"
             placeholder="Write Your Review Here"
             name="reviewText"

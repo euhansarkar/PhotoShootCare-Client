@@ -1,11 +1,12 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.png";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 
 const Register = () => {
+  const [error, setError] = useState(null);
   const { createUser, googleSignIn } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   useTitle(`register`)
@@ -22,11 +23,12 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        setError(``);
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
+        setError(errorMessage);
       });
   };
 
@@ -98,6 +100,7 @@ const Register = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
+              <h2>{error}</h2>
             </div>
           </form>
           <div className="flex items-center px-3 space-x-1">

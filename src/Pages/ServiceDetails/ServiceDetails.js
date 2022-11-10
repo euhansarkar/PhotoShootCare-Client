@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 import AddReview from "./AddReview/AddReview";
 import Features from "./Features/Features";
+import ShowReview from "./ShowReview/ShowReview";
 
 
 const notify = () => toast(`added to cart list`);
 
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
+  const {user} = useContext(AuthContext);
   const {_id, title, img, service_id, price, description, facility} = serviceDetails;
   useTitle(`details`);
   return (
@@ -35,7 +38,14 @@ const ServiceDetails = () => {
             facility.map(facil => <Features facil={facil} key={facil.key}></Features>)
         }
     </div>
-    <AddReview key={_id} serviceDetails={serviceDetails}></AddReview>
+    <ShowReview key={service_id} serviceDetails={serviceDetails}></ShowReview>
+    {
+      user?.uid ?
+      <AddReview key={_id} serviceDetails={serviceDetails}></AddReview> : 
+      <>
+      <div className="text-center mt-7">
+      <button className="btn capitalize btn-outline text-center btn-warning">Please login and add a review</button></div></>
+    }
     </div>
   );
 };
