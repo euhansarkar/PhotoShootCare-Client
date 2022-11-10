@@ -4,12 +4,20 @@ import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import SingleReview from "./SingleReview/SingleReview";
 
 const MyReview = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   console.log(reviews);
   useEffect(() => {
-    fetch(`https://service-review-server-five.vercel.app/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`https://service-review-server-five.vercel.app/reviews?email=${user?.email}`
+    )
+      .then((res) => {
+        // if(res.status === 401 || res.status === 403){
+        //     logOut()
+        //     .then(res => {})
+        //     .catch(err => console.error(err));
+        // }
+        res.json()
+      })
       .then((data) => setReviews(data));
   }, [user?.email]);
 

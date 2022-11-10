@@ -12,6 +12,8 @@ const notify = () => toast(`added to cart list`);
 
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
+  console.log(serviceDetails);
+  console.log(serviceDetails);
   const {user} = useContext(AuthContext);
   const {_id, title, img, service_id, price, description, facility} = serviceDetails;
   useTitle(`details`);
@@ -33,11 +35,11 @@ const ServiceDetails = () => {
       </div>
     </div>
     <h2 className="capitalize text-center text-4xl font-semibold my-10">what the feature of <span className="text-rose-600">{title}</span> service?</h2>
-    <div className="grid grid-cols-2 gap-14">
+    {/* <div className="grid grid-cols-2 gap-14">
         {
             facility.map(facil => <Features facil={facil} key={facil.key}></Features>)
         }
-    </div>
+    </div> */}
     <ShowReview key={service_id} serviceDetails={serviceDetails}></ShowReview>
     {
       user?.uid ?

@@ -50,7 +50,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: `/myreviews`,
-                element: <MyReview></MyReview>
+                element: <PrivateRoutes><MyReview></MyReview></PrivateRoutes>
             },
             {
                 path: `/myservice`,

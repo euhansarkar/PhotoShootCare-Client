@@ -9,13 +9,7 @@ const Blogs = () => {
   return (
     <div className="grid gap-y-7 my-5 mx-2">
       <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
-        <figure className="object-fill">
-          <img
-            className="h-full w-96"
-            src={`https://placeimg.com/200/280/arch`}
-            alt="Album"
-          />
-        </figure>
+        
         <div className="card-body w-3/5">
           <h2 className="card-title">Difference between SQL and NoSQL</h2>
           <p>
@@ -43,13 +37,7 @@ const Blogs = () => {
         </div>
       </div>
       <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
-        <figure className="object-fill">
-          <img
-            className="h-full w-96"
-            src={`https://placeimg.com/200/280/arch`}
-            alt="Album"
-          />
-        </figure>
+        
         <div className="card-body w-3/5">
           <h2 className="card-title">What is JWT, and how does it work?</h2>
           <p>
@@ -76,13 +64,7 @@ const Blogs = () => {
         </div>
       </div>
       <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
-        <figure className="object-fill">
-          <img
-            className="h-full w-96"
-            src={`https://placeimg.com/200/280/arch`}
-            alt="Album"
-          />
-        </figure>
+        
         <div className="card-body w-3/5">
           <h2 className="card-title">
             What is the difference between javascript and NodeJS?
@@ -149,13 +131,7 @@ const Blogs = () => {
         </div>
       </div>
       <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
-        <figure className="object-fill">
-          <img
-            className="h-full w-96"
-            src={`https://placeimg.com/200/280/arch`}
-            alt="Album"
-          />
-        </figure>
+        
         <div className="card-body w-3/5">
           <h2 className="card-title">
             How does NodeJS handle multiple requests at the same time?
