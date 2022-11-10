@@ -17,8 +17,8 @@ const MyService = () => {
 
     return (
         <div>
-            <h2>this i s my service page</h2>
-            <div className='grid grid-cols-3 gap-7'>
+            <h2 className='mt-10 mb-4 text-center font-bold text-5xl'>Your Services</h2>
+            <div className='grid md:grid-cols-3 my-5 md:gap-7'>
                 {
                     services.map(service => <ServiceCard service={service} key={service._id}></ServiceCard>)
                 }

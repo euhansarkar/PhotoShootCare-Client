@@ -73,8 +73,8 @@ const AddField = () => {
 
   return (
     <div className="my-7">
-      <h2 className="font-bold text-4xl capitalize text-pink-600 text-center">
-        add a review
+      <h2 className="font-bold my-10 text-4xl capitalize text-pink-600 text-center">
+        add a New Service
       </h2>
       <form onSubmit={handleAddService}>
         <div className="grid grid-cols-2 gap-4">

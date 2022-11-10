@@ -6,6 +6,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { Toaster } from 'react-hot-toast';
 
 
+
 function App() {
   return (
     <div className="App w-10/12 mx-auto">
