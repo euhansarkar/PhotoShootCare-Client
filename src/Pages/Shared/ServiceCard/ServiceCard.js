@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
         </PhotoProvider>
         <h3>Price: ${price}</h3>
         <p className="text-md my-3 dark:text-gray-400">
-          {description.length > 100
+          {description?.length > 100
             ? description.slice(0, 100) + `.....`
             : description}
         </p>

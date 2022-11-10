@@ -34,7 +34,7 @@ const MyReview = () => {
   return (
     <div>
       <h2>this i s my review </h2>
-      <h2 className="text-5xl">{reviews.length}</h2>
+      <h2 className="text-5xl">{reviews?.length}</h2>
       <div className="grid grid-cols-3 gap-7 my-7">
         {reviews.map((review) => (
           <SingleReview review={review} handleDelete={handleDelete} key={review._id}></SingleReview>
