@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "../../../Shared/ServiceCard/ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`https://service-review-server-five.vercel.app/services`)
+    fetch(`https://service-review-server-five.vercel.app/servicess`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   });
@@ -18,10 +19,13 @@ const Services = () => {
         aut atque quasi asperiores, sunt, maiores, repudiandae inventore ipsa
         neque corrupti tempora animi.
       </p>
-      <div className="grid md:grid-cols-3 md:gap-10 my-10">
+      <div className="grid md:grid-cols-3 md:gap-10 mt-10 mb-5">
         {services.map((service) => (
           <ServiceCard service={service} key={service._id}></ServiceCard>
         ))}
+      </div>
+      <div className="text-center mb-10">
+      <Link to={`/services`}><button className="btn btn-error">Get More Services</button></Link>
       </div>
     </div>
   );

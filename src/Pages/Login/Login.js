@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from '../../assets/images/login/login.png'
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import app from "../../firebase/firebase.config";
 import useTitle from "../Hooks/useTitle";
 
 const Login = () => {
@@ -31,22 +32,22 @@ const googleProvider = new GoogleAuthProvider();
               email: user.email,
             }
 
-            // console.log(currentUser);
-
 
             // get jwt token
-            // fetch(`http://localhost:5000/jwt`, {
-            //   method: `POST`,
-            //   headers: {
-            //     "Content-Type": `application/json`,
-            //   },
-            //   body: JSON.stringify(currentUser),
-            // })
-            // .then(res => res.json())
-            // .then(data => {
-            //   console.log(data);
-            //   localStorage.setItem("photoShootToken", data.token);
-            // })
+            
+            fetch(`https://service-review-server-five.vercel.app/jwt`, {
+              method: `POST`,
+              headers: {
+                "Content-Type": `application/json`,
+              },
+              body: JSON.stringify(currentUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              localStorage.setItem(`photoShootToken`, data.token)
+            })
+            
 
 
             navigate(from, {replace: true})
@@ -70,7 +71,7 @@ const googleProvider = new GoogleAuthProvider();
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col md:gap-20 items-center lg:flex-row">
         <div className="text-center lg:text-left">
-          <img src={img} className={`w-full max-h-screen`} alt="" />
+          <img src={img} className={`w-full hidden md:block max-h-screen`} alt="" />
         </div>
         <div className="card py-5 flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-100">
           <h1 className="text-5xl font-bold">Login</h1>

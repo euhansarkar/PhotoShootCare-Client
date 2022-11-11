@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
+import React, { createContext, useContext } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../Hooks/useTitle";
 import AddReview from "./AddReview/AddReview";
 import Features from "./Features/Features";
-import ShowReview from "./ShowReview/ShowReview";
+import ShowReview from "./ShowReview/ShowReview"
 
 const notify = () => toast(`added to cart list`);
 
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
-  console.log(serviceDetails);
+  // console.log(serviceDetails);
   const { user } = useContext(AuthContext);
-  const { _id, title, img, service_id, price, description, facility } =
+  const { title, img,  price, description, facility } =
     serviceDetails;
   useTitle(`details`);
   return (
@@ -42,15 +42,16 @@ const ServiceDetails = () => {
           <Features facil={facil} key={facil.key}></Features>
         ))}
       </div>
-      <ShowReview key={service_id} serviceDetails={serviceDetails}></ShowReview>
+      <ShowReview serviceDetails={serviceDetails}></ShowReview>
       {user?.uid ? (
-        <AddReview key={_id} serviceDetails={serviceDetails}></AddReview>
+        <AddReview serviceDetails={serviceDetails}></AddReview>
       ) : (
         <>
           <div className="text-center mt-7">
+            <Link to={`/login`}>
             <button className="btn capitalize btn-outline text-center btn-warning">
               Please login and add a review
-            </button>
+            </button></Link>
           </div>
         </>
       )}

@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.png";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../Hooks/useTitle";
@@ -9,6 +9,7 @@ const Register = () => {
   const [error, setError] = useState(null);
   const { createUser, googleSignIn } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  const navigate = useNavigate();
   useTitle(`register`)
 
   const handleRegisterForm = (event) => {
@@ -24,6 +25,7 @@ const Register = () => {
         console.log(user);
         form.reset();
         setError(``);
+        navigate(`/`);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -49,7 +51,7 @@ const Register = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col md:gap-20 items-center lg:flex-row">
         <div className="text-center lg:text-left">
-          <img src={img} className={`w-full max-h-screen`} alt="" />
+          <img src={img} className={`w-full hidden md:block max-h-screen`} alt="" />
         </div>
         <div className="card py-5 flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-100">
           <h1 className="text-5xl font-bold">Register</h1>
