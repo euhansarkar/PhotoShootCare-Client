@@ -8,7 +8,8 @@ const MyReview = () => {
   const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useTitle(`myreview`);
-  console.log(reviews); 
+  
+
   useEffect(() => {
     fetch(
       `https://service-review-server-five.vercel.app/reviews?email=${user.email}`, {

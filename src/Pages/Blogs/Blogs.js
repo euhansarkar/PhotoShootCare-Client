@@ -8,7 +8,7 @@ const Blogs = () => {
     useTitle(`Blogs`)
   return (
     <div className="grid gap-y-7 my-5 mx-2">
-      <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
+      <div className="card flex flex-row-reverse bg-sky-50 lg:card-side shadow-xl ">
         
         <div className="card-body w-3/5">
           <h2 className="card-title">Difference between SQL and NoSQL</h2>
@@ -36,7 +36,7 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-      <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
+      <div className="card flex flex-row-reverse bg-sky-50 lg:card-side shadow-xl ">
         
         <div className="card-body w-3/5">
           <h2 className="card-title">What is JWT, and how does it work?</h2>
@@ -63,7 +63,7 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-      <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
+      <div className="card flex flex-row-reverse bg-sky-50 lg:card-side shadow-xl ">
         
         <div className="card-body w-3/5">
           <h2 className="card-title">
@@ -130,7 +130,7 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-      <div className="card flex flex-row-reverse lg:card-side bg-base-100 shadow-xl ">
+      <div className="card flex flex-row-reverse bg-sky-50 lg:card-side shadow-xl ">
         
         <div className="card-body w-3/5">
           <h2 className="card-title">

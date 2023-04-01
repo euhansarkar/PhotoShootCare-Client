@@ -54,7 +54,7 @@ const Register = () => {
           <img src={img} className={`w-full hidden md:block max-h-screen`} alt="" />
         </div>
         <div className="card py-5 flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-100">
-          <h1 className="text-5xl font-bold">Register</h1>
+          <h1 className="text-5xl font-bold text-center">Register</h1>
           <form onSubmit={handleRegisterForm} className="card-body">
           <div className="form-control">
               <label className="label">

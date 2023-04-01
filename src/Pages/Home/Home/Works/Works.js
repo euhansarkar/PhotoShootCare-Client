@@ -4,7 +4,7 @@ const Works = () => {
   return (
     <section className="p-6">
     <h2 className="font-bold text-center my-10 text-4xl uppercase">our achivements</h2>
-      <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
+      <div className="container bg-slate-100 mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
         <div className="flex text-primary flex-col justify-start m-2 lg:m-6">
           <p className="text-4xl font-bold leading-none lg:text-6xl">50+</p>
           <p className="text-sm sm:text-base">Clients</p>
@@ -18,8 +18,8 @@ const Works = () => {
           <p className="text-sm sm:text-base">Published books</p>
         </div>
         <div className="flex text-primary flex-col justify-start m-2 lg:m-6">
-          <p className="text-4xl font-bold leading-none lg:text-6xl">8</p>
-          <p className="text-sm sm:text-base">TED talks</p>
+          <p className="text-4xl font-bold leading-none lg:text-6xl">800000+</p>
+          <p className="text-sm sm:text-base">photos taken</p>
         </div>
         <div className="flex text-primary flex-col justify-start m-2 lg:m-6">
           <p className="text-4xl font-bold leading-none lg:text-6xl">22</p>
